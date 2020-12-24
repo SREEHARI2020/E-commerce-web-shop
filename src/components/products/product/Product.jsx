@@ -3,7 +3,7 @@ import {Card,CardMedia,CardContent,CardActions,Typography,IconButton} from '@mat
 import { AddShoppingCart } from '@material-ui/icons';
 import useStyles from './styles';
 
-const Product = ({product}) => {
+const Product = ({product,onAddToCart}) => {
     const classes=useStyles();
     const regex = /(<([^>]+)>)/ig;
     product.description = product.description.replace(regex, '');
@@ -21,7 +21,7 @@ const Product = ({product}) => {
 
             </CardContent>
             <CardActions disableSpacing className={classes.CardActions}>
-                <IconButton aria-label="Add to Cart">
+                <IconButton onClick={()=>onAddToCart(product.id,1)}aria-label="Add to Cart">
 
                     <AddShoppingCart />
                 </IconButton>
