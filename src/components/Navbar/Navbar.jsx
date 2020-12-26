@@ -7,9 +7,10 @@ import logo from '../../assets/icons8-huawei-logo.svg'
 
 const Navbar = ({cart}) => {
     const classes=useStyles();
-    
+   console.log("check",cart);
     return (
       <>
+      {}
       <AppBar position="fixed" className={classes.AppBar} color="inherit" >
           <Toolbar>
               <Typography variant="h6" className={classes.title} color="inherit">
@@ -20,9 +21,14 @@ const Navbar = ({cart}) => {
                 <div className={classes.grow}></div>
                 <div className={classes.button}>
                     <IconButton aria-label="show cart items" color="inherit">
-                        <Badge badgeContent={cart.length} color="secondary">
-                            <ShoppingCart/>
-                            </Badge> 
+                      {cart.cart?  <Badge badgeContent={cart.cart.total_items} color="secondary">
+                        
+                        <ShoppingCart/>
+                        </Badge>:  <Badge  color="secondary">
+                        
+                        <ShoppingCart/>
+                        </Badge> }
+                      
 
                     </IconButton>
                 </div>
