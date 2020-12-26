@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import './App.css';
-import {Products,Navbar} from './components';
+import {Products,Navbar,Cart} from './components';
 import { commerce } from './lib/commerce';
 
 function App() {
@@ -41,12 +41,12 @@ useEffect(()=>{
 
 },[])
 
-
-
   return (
     <div className="App">
       <Navbar cart={cart}/>
-    <Products products={products} onAddToCart={handleAddToCart}/>
+    {/* <Products products={products} onAddToCart={handleAddToCart}/> */}
+ 
+    <Cart cart={cart}/>
     </div>
   );
 }
